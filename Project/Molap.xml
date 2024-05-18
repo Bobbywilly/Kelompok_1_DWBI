@@ -1,0 +1,40 @@
+<Schema name="New Schema1">
+  <Dimension type="StandardDimension" visible="true" name="location">
+    <Hierarchy name="dim_location" visible="true" hasAll="true" allMemberName="semua lokasi" primaryKey="location_id">
+      <Table name="dim_location" alias="">
+      </Table>
+      <Level name="location_id" visible="true" column="location_id" nameColumn="location_name" ordinalColumn="location_id" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="location_name" visible="true" column="location_id" nameColumn="location_name" ordinalColumn="location_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Country" visible="true" column="location_id" nameColumn="location_expanded_country" ordinalColumn="location_expanded_country" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" name="Category">
+    <Hierarchy name="dim_category" visible="true" hasAll="true" allMemberName="semua category" primaryKey="category_id">
+      <Table name="dim_category" alias="">
+      </Table>
+      <Level name="category_id" visible="true" column="category_id" nameColumn="category_name" ordinalColumn="category_id" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="category_name" visible="true" column="category_name" nameColumn="category_id" ordinalColumn="category_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="category_slug" visible="true" column="category" nameColumn="category_id" ordinalColumn="category_name" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" name="Project">
+    <Hierarchy name="dim_project" visible="true" hasAll="true" allMemberName="semua project" primaryKey="project_id">
+      <Table name="dim_project" alias="">
+      </Table>
+      <Level name="project_id" visible="true" column="project_id" nameColumn="dim_project" ordinalColumn="dim_project" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="state" visible="true" column="project_state" nameColumn="project_id" ordinalColumn="project_state" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+  </Dimension>
+  <Cube name="kickstarter" visible="true" cache="true" enabled="true">
+    <Table name="fact_pendanaan" alias="">
+    </Table>
+  </Cube>
+</Schema>
